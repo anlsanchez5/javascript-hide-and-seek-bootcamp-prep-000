@@ -12,14 +12,19 @@ function nestedTarget() {
 function deepestChild(array, criterianFn) {
   let current = array;
   let next = [];
-      for (let i =0; i < current.length; i++) {
-        next.push(current[i])
-      }
-   
-  
-  
+  while (current) {
+    if (criteriaFn(current)) {
+      return current
+    }
+  if (Array.isArray(current)) {
+    for (let i = 0; i<current.length; i++) {
+      next.push(current[i])
+    }
+  }
+current = next.shift()
 }
-
+return null
+}
 
 function increaseRankBy(n) {
   const ranks = document.getElementById('app').querySelectorAll('ul.ranked-list li')
