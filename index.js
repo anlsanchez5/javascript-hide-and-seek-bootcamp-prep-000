@@ -23,7 +23,7 @@ function deepestChild(array, criterianFn) {
   }
 current = next.shift()
 }
-return null
+return document.getElementById('grand-node').querySelectorAll('')
 }
 
 function increaseRankBy(n) {
